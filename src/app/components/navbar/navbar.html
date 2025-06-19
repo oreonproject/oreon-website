@@ -10,7 +10,7 @@
   </a>
 
   <div class="flex">
-    <a [routerLink]="'/download'">
+    <a [routerLink]="'download'">
       <button
         class="mx-3 px-4 py-2 rounded hover:bg-gray-200 transition cursor-pointer underline"
       >
@@ -25,19 +25,24 @@
       </button>
     </a>
 
+    <a [routerLink]="'whyoreon'">
+      <button
+        class="mx-3 px-4 py-2 rounded hover:bg-gray-200 transition cursor-pointer underline"
+      >
+        Why oreon?
+      </button>
+    </a>
+
     <button
       class="mx-3 px-4 py-2 rounded hover:bg-gray-200 transition cursor-pointer underline"
     >
-      Oreon 10
-    </button>
-    <button
-      class="mx-3 px-4 py-2 rounded hover:bg-gray-200 transition cursor-pointer underline"
-    >
-      Our Team
+      Docs
     </button>
   </div>
 
-  <button class="bg-[#202020] text-white p-3 rounded-2xl cursor-pointer">
-    Forums
-  </button>
+  <a href="https://forums.oreonproject.org/">
+    <button class="bg-[#202020] text-white p-3 rounded-2xl cursor-pointer">
+      Forums
+    </button>
+  </a>
 </nav>
