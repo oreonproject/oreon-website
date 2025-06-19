@@ -1,0 +1,155 @@
+<div class="flex flex-col gap-12 px-6 lg:px-32 py-16 bg-gray-100 min-h-screen">
+  <main
+    class="flex flex-col lg:flex-row items-center justify-between p-10 bg-white shadow-md rounded-lg border border-gray-200 min-h-[50vh]"
+  >
+    <div class="w-full lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">
+        Oreon 10 <span class="text-blue-400">'Foxy'</span>
+      </h1>
+      <p class="mt-6 text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
+        Based on RHEL 10, this is our latest and most advanced release.
+      </p>
+    </div>
+
+    <div class="w-full lg:w-1/2 flex flex-col gap-6 text-center lg:text-left">
+      <div class="text-gray-700 text-base max-w-md mx-auto lg:mx-0">
+        <p><span class="font-semibold">Release Date:</span> Dec 12, 2024</p>
+        <p>
+          <span class="font-semibold">Mainstream Support:</span> Until Aug 21,
+          2030
+        </p>
+        <p><span class="font-semibold">End of Support:</span> Jun 1, 2035</p>
+      </div>
+      <div
+        class="mt-8 flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
+      >
+        <a
+          href="https://boostyconnect.com/download/3715/?tmstv=1745095104"
+          class="bg-neutral-800 hover:bg-neutral-700 text-white px-8 py-4 rounded-md text-base font-semibold transition"
+        >
+          Download x86_64
+        </a>
+        <a
+          href="https://boostyconnect.com/download/3717/?tmstv=1745095104"
+          class="bg-neutral-800 hover:bg-neutral-700 text-white px-8 py-4 rounded-md text-base font-semibold transition"
+        >
+          Download aarch64
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <main
+    class="flex flex-col lg:flex-row items-center justify-between p-10 bg-white shadow-md rounded-lg border border-gray-200 min-h-[50vh]"
+  >
+    <div class="w-full lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">
+        Oreon Lime (R2) <span class="text-green-400">'Limefalls'</span>
+      </h1>
+      <p class="mt-6 text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
+        Based on RHEL 9, this stable release offers long-term support.
+      </p>
+    </div>
+
+    <div class="w-full lg:w-1/2 flex flex-col gap-6 text-center lg:text-left">
+      <div class="text-gray-700 text-base max-w-md mx-auto lg:mx-0">
+        <p><span class="font-semibold">Release Date:</span> Feb 18, 2024</p>
+        <p>
+          <span class="font-semibold">Mainstream Support:</span> Until Jun 1,
+          2027
+        </p>
+        <p><span class="font-semibold">End of Support:</span> May 31, 2032</p>
+      </div>
+      <div
+        class="mt-8 flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
+      >
+        <a
+          href="https://boostyconnect.com/download/3715/?tmstv=1745095104"
+          class="bg-neutral-800 hover:bg-neutral-700 text-white px-8 py-4 rounded-md text-base font-semibold transition"
+        >
+          Download x86_64
+        </a>
+        <a
+          href="https://boostyconnect.com/download/3717/?tmstv=1745095104"
+          class="bg-neutral-800 hover:bg-neutral-700 text-white px-8 py-4 rounded-md text-base font-semibold transition"
+        >
+          Download aarch64
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Verifying Downloads
+      </h2>
+      <p class="mt-4 text-lg text-gray-600">
+        To verify your download, use the SHA-256 checksums below:
+      </p>
+    </div>
+
+    <div class="w-full">
+      <div class="mb-8">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Oreon 10</h3>
+        <div class="relative flex items-center p-3 bg-gray-100 rounded-md mb-2">
+          <code
+            class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+            >7a0fa6915b4de60f1926b46481496dfbb7208f18b88dce2dbe4995cbfff5be2b</code
+          >
+          <button
+            class="absolute right-3 p-2 bg-gray-200 rounded-md hover:bg-gray-300 transition-colors cursor-pointer"
+            title="Copy SHA-256 hash"
+            (click)="copied($event, '7a0fa6915b4de60f1926b46481496dfbb7208f18b88dce2dbe4995cbfff5be2b')"
+          >
+            <i class="bi bi-clipboard"></i>
+          </button>
+        </div>
+        <p class="text-gray-700 text-base mt-1">
+          Oreon-10-Core-2504.4-x86_64.iso
+        </p>
+
+        <div
+          class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+        >
+          <code
+            class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+            >4e6bc2d21f24bbcf2984a6e9a0c3c8827a379d3816b4eba7e00747fd6e469f6d</code
+          >
+          <button
+            class="absolute right-3 p-2 bg-gray-200 rounded-md hover:bg-gray-300 transition-colors cursor-pointer"
+            title="Copy SHA-256 hash"
+            (click)="copied($event, '4e6bc2d21f24bbcf2984a6e9a0c3c8827a379d3816b4eba7e00747fd6e469f6d')"
+          >
+            <i class="bi bi-clipboard"></i>
+          </button>
+        </div>
+        <p class="text-gray-700 text-base mt-1">
+          Oreon-10-Core-2504.4-aarch64.iso
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Oreon Lime (R2)</h3>
+        <div class="relative flex items-center p-3 bg-gray-100 rounded-md mb-2">
+          <code
+            class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+            >78c698a2b3f4f6ebc31c3e30ea8ab9b9ba313a9d8f8a908a6796d0c9a6f60237</code
+          >
+          <button
+            class="absolute right-3 p-2 bg-gray-200 rounded-md hover:bg-gray-300 transition-colors cursor-pointer"
+            title="Copy SHA-256 hash"
+            (click)="copied($event, '78c698a2b3f4f6ebc31c3e30ea8ab9b9ba313a9d8f8a908a6796d0c9a6f60237')"
+          >
+            <i class="bi bi-clipboard"></i>
+          </button>
+        </div>
+        <p class="text-gray-700 text-base mt-1">
+          Oreon-Lime-DPStandard-R2-2504-x86_64.iso
+        </p>
+      </div>
+    </div>
+  </main>
+</div>

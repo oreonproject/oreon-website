@@ -1,9 +1,22 @@
 <div class="bg-white shadow-lg rounded-xl p-6 h-[30vh] flex flex-col">
   <h3 class="text-2xl font-semibold text-gray-800 mb-4">{{ title }}</h3>
   <p class="text-gray-600 text-base flex-grow">{{ description }}</p>
-  <button
-    class="bg-[#202020] text-white p-3 rounded-2xl cursor-pointer mt-auto"
-  >
-    Learn more
-  </button>
+
+  @if (internRoute) {
+  <a [routerLink]="destination">
+    <button
+      class="bg-[#202020] text-white p-3 rounded-2xl cursor-pointer mt-auto"
+    >
+      {{ button }}
+    </button>
+  </a>
+  } @else {
+  <a [href]="destination" target="_blank" rel="noopener">
+    <button
+      class="bg-[#202020] text-white p-3 rounded-2xl cursor-pointer mt-auto hover:bg-[#4d4c4c]"
+    >
+      {{ button }}
+    </button>
+  </a>
+  }
 </div>
