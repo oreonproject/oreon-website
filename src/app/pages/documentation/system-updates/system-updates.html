@@ -1,1 +1,169 @@
-<p>system-updates works!</p>
+<div class="flex flex-col gap-12 px-6 lg:px-32 py-16 bg-gray-100 min-h-screen">
+  <div>
+    <h1 class="text-center font-extrabold text-3xl">System updates</h1>
+    <p class="mt-4 text-lg text-gray-600 text-center">
+      Keeping your Oreon system up-to-date is essential for security, stability,
+      and access to the latest features.
+    </p>
+  </div>
+
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Keeping Your System Updated
+      </h2>
+    </div>
+    <p>
+      Regularly updating your Oreon Linux system is crucial for security,
+      stability, and access to the latest features. Updates include security
+      patches, bug fixes, and software improvements. The dnf package manager
+      handles system updates.
+    </p>
+    <p>Most commands require superuser privileges, obtained using sudo.</p>
+
+    <h3 class="font-bold">Checking for Available Updates</h3>
+    <p>
+      Before applying updates, you can check which packages have newer versions
+      available in the repositories:
+    </p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf check-update</code
+      >
+    </div>
+    <p>
+      This command lists packages with available updates but does not download
+      or install them.
+    </p>
+  </main>
+
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Applying updates
+      </h2>
+    </div>
+    <p>
+      To download and install all available updates for your installed packages:
+    </p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf update</code
+      >
+    </div>
+    <p>
+      DNF will calculate dependencies, list the packages to be updated, and ask
+      for confirmation before proceeding. You can automatically answer yes by
+      adding the -y flag:
+    </p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf update -y</code
+      >
+    </div>
+    <p>
+      However, it's generally recommended to review the list of packages before
+      confirming. Sometimes, updating a specific package might be necessary:
+    </p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf upgrade &lt;package-name&gt;</code
+      >
+    </div>
+  </main>
+
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Importance of updates
+      </h2>
+    </div>
+    <p>Applying updates regularly ensures:</p>
+
+    <p>
+      <b>Security:</b> Patches vulnerabilities that could be exploited. <br /><b
+        >Stability:</b
+      >
+      Fixes bugs that might cause crashes or unexpected behavior. <br /><b
+        >Features:</b
+      >
+      Provides access to the latest software improvements and capabilities. It's
+      a good practice to run sudo dnf update frequently, perhaps daily or
+      weekly.
+    </p>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Automatic updates (dnf-automatic)
+      </h2>
+    </div>
+    <p>
+      For users who prefer automated updates, Oreon Linux (like Fedora) offers
+      the dnf-automatic package. This tool can be configured to automatically
+      check for, download, and even install updates in the background.
+    </p>
+    <br />
+    <p>To install it:</p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf install dnf-automatic</code
+      >
+    </div>
+    <p>
+      After installation, you need to configure its behavior by editing its
+      configuration file (usually /etc/dnf/automatic.conf) and enabling/starting
+      the corresponding systemd timer (e.g., dnf-automatic.timer).
+    </p>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Distribution synchronization
+      </h2>
+      <p>
+        In some cases, especially after enabling new repositories or resolving
+        dependency issues, you might want to synchronize your installed packages
+        with the versions available in the enabled repositories. This might
+        involve upgrading or downgrading packages.
+      </p>
+      <div
+        class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+      >
+        <code
+          class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+          >sudo dnf distro-sync</code
+        >
+      </div>
+      <p>
+        Use this command with caution, and review the proposed changes
+        carefully.
+      </p>
+    </div>
+  </main>
+</div>

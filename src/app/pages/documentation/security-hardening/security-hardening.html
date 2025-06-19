@@ -1,1 +1,118 @@
-<p>security-hardening works!</p>
+<div class="flex flex-col gap-12 px-6 lg:px-32 py-16 bg-gray-100 min-h-screen">
+  <div>
+    <h1 class="text-center font-extrabold text-3xl">Security & hardening</h1>
+    <p class="mt-4 text-lg text-gray-600 text-center">
+      Securing your Oreon-based system is crucial. This guide covers fundamental
+      security practices for Fedora/RHEL-like environments.
+    </p>
+  </div>
+
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        firewalld
+      </h2>
+    </div>
+    <p>
+      Fedora and RHEL derivatives use firewalld as the default firewall
+      management tool. It utilizes zones to manage trust levels for network
+      connections and interfaces.
+    </p>
+    <b>Key Commands:</b>
+    <p>
+      Check status: sudo systemctl status firewalld List active rules/zones:
+      sudo firewall-cmd --list-all Make configuration changes permanent: Add the
+      --permanent flag to commands. Reload after permanent changes: sudo
+      firewall-cmd --reload Example: Allow SSH only from a specific subnet:
+    </p>
+    <b>Example: Allow SSH only from a specific subnet:</b>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        ># Remove default ssh service if present sudo firewall-cmd
+        --remove-service=ssh --permanent # Add specific rule sudo firewall-cmd
+        --add-rich-rule='rule family="ipv4" source address="192.168.1.0/24"
+        service name="ssh" accept' --permanent # Reload firewall sudo
+        firewall-cmd --reload</code
+      >
+    </div>
+    <p>
+      Always configure the firewall according to the principle of least
+      privilege, only opening necessary ports and services.
+    </p>
+  </main>
+
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">SELinux</h2>
+    </div>
+    <p>
+      SELinux (Security-Enhanced Linux) provides Mandatory Access Control (MAC),
+      enforcing fine-grained permissions beyond standard Linux discretionary
+      access controls.
+    </p>
+    <b>Modes:</b>
+    <p>
+      <b>Enforcing:</b> Actively blocks actions violating policy (Default & for
+      debugging). Disabled: SELinux is turned off (Strongly discouraged).
+    </p>
+    <p>
+      <b>Permissive:</b> Logs violations but does not block them (Useful for
+      debugging).
+    </p>
+    <p><b>Disabled:</b> SELinux is turned off (Strongly discouraged).</p>
+    <b>Key Commands:</b>
+    <p>
+      Check status: sestatus <br />Check current mode: getenforce <br />
+      Temporarily set permissive: sudo setenforce 0 <br />Temporarily set
+      enforcing: sudo setenforce 1 <br />Persistent mode changes require editing
+      /etc/selinux/config and rebooting. Troubleshooting often involves checking
+      audit logs (/var/log/audit/audit.log) using tools like ausearch or
+      audit2why and adjusting policies or contexts if necessary.
+    </p>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        User privileges & sudo
+      </h2>
+      <p>
+        Adhere to the principle of least privilege. Avoid using the root account
+        directly for daily tasks.
+      </p>
+    </div>
+    <p>
+      Use standard user accounts. Elevate privileges only when necessary using
+      sudo. Manage sudo permissions carefully using the visudo command to edit
+      the sudoers configuration safely. Grant specific commands or limit
+      privileges rather than giving full root access whenever possible. Refer to
+      the User Management guide for details on creating users and groups.
+    </p>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        System Updates
+      </h2>
+      <p>
+        Keeping the system updated is one of the most critical security
+        practices. Updates patch known vulnerabilities.
+      </p>
+    </div>
+    <p>
+      Regularly run sudo dnf update. Consider configuring automatic updates
+      using dnf-automatic for critical systems. See the System Updates guide for
+      more details.
+    </p>
+  </main>
+</div>

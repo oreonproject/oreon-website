@@ -1,1 +1,191 @@
-<p>user-management works!</p>
+<div class="flex flex-col gap-12 px-6 lg:px-32 py-16 bg-gray-100 min-h-screen">
+  <div>
+    <h1 class="text-center font-extrabold text-3xl">User management</h1>
+    <p class="mt-4 text-lg text-gray-600 text-center">
+      This guide covers the basics of managing user accounts and groups in
+      Oreon.
+    </p>
+  </div>
+
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Managing Users and Groups
+      </h2>
+    </div>
+    <p>
+      Oreon Linux uses standard Linux tools for managing user accounts and
+      groups. This allows for fine-grained control over permissions and access.
+      These commands typically require superuser privileges (use sudo).
+    </p>
+
+    <h3 class="font-bold text-xl">User Management</h3>
+    <h4 class="font-bold">Adding Users</h4>
+    <p>To add a new user:</p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo useradd &lt;username&gt;</code
+      >
+    </div>
+    <p>
+      This creates the user account but it's initially locked. You need to set a
+      password:
+    </p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo passwd &lt;username&gt; ></code
+      >
+    </div>
+    <p>You will be prompted to enter and confirm the new password.</p>
+    <p>
+      Common options for useradd: <br />
+      -m: Create the user's home directory (often the default behavior). <br />
+      -G &lt;group1&gt;,&lt;group&gt;: Add the user to supplementary groups. -s
+      <br />
+      &lt;shell&gt;: Specify the user's login shell (e.g., /bin/bash). <br />
+      -c "&lt;Comment/Full Name&gt;": Add a descriptive comment. <br />
+      Example: Add user 'jane' to the 'developers' group with a comment:
+    </p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo useradd -m -G developers -c "Jane Doe" jane <br />sudo passwd
+        jane</code
+      >
+    </div>
+    <h4 class="font-bold">Modifying users</h4>
+    <p>
+      To modify an existing user account, use usermod. Common options include:
+
+      <br />-l &lt;new_username&gt;: Change the username. <br />-g
+      &lt;primary_group&gt;: Change the primary group. <br />-G
+      &lt;group1&gt;,&lt;group2&gt;: Set the list of supplementary groups
+      (overwrites existing list). <br />-aG &lt;group_to_add&gt;: Add the user
+      to a supplementary group (appends to existing list). <br />-s
+      &lt;shell&gt;: Change the login shell. <br />-L: Lock the user account.
+      <br />-U: Unlock the user account. <br />Example: Add user 'john' to the
+      'testers' group without removing existing groups:
+    </p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo usermod -aG testers john</code
+      >
+    </div>
+    <h4 class="font-bold">Deleting Users</h4>
+    <p>To delete a user account:</p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo userdel &lt;username&gt;</code
+      >
+    </div>
+    <p>To also remove the user's home directory and mail spool:</p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo userdel -r &lt;username&gt;</code
+      >
+    </div>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Group Management
+      </h2>
+      <h4 class="font-bold">Adding groups</h4>
+    </div>
+    <p>To create a new group:</p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo groupadd &lt;groupname&gt;</code
+      >
+    </div>
+    <h4 class="font-bold">Modifying groups</h4>
+    <p>To change a group's name or GID (Group ID):</p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo groupmod -n &lt;new_groupname&gt; &lt;old_groupname&gt;</code
+      >
+    </div>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo groupmod -g &lt;new_gid&gt; &lt;groupname&gt;</code
+      >
+    </div>
+    <h4 class="font-bold">Deleting groups</h4>
+    <p>To delete a group:</p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo groupdel &lt;groupname&gt;</code
+      >
+    </div>
+    <h4 class="font-bold">Checking user and group information</h4>
+    <p>To see your own user and group IDs:</p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >id</code
+      >
+    </div>
+    <p>To see user/group IDs for another user:</p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >id &lt;username&gt;</code
+      >
+    </div>
+    <p>To list the groups a user belongs to:</p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >groups &lt;username&gt;</code
+      >
+    </div>
+    <p>
+      If no username is specified, it shows the groups for the current user.
+    </p>
+    <br />
+    <p>
+      User and group information is stored in files like /etc/passwd,
+      /etc/shadow, /etc/group, and /etc/gshadow. While you can view these files,
+      it's recommended to use the provided command-line tools for modifications.
+    </p>
+  </main>
+</div>
