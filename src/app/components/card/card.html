@@ -10,7 +10,7 @@
       {{ button }}
     </button>
   </a>
-  } @else {
+  } @else { @if (buttonEnabled) {
   <a [href]="destination" target="_blank" rel="noopener">
     <button
       class="bg-[#202020] text-white p-3 rounded-2xl cursor-pointer mt-auto hover:bg-[#4d4c4c]"
@@ -18,5 +18,5 @@
       {{ button }}
     </button>
   </a>
-  }
+  } }
 </div>

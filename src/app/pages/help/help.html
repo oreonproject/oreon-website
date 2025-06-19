@@ -1,0 +1,55 @@
+<main class="flex flex-col justify-center px-4 md:px-8 lg:px-16">
+  <h1 class="text-3xl md:text-4xl font-extrabold mx-auto mt-5 text-center">
+    Help & Support
+  </h1>
+
+  <div class="flex flex-col md:flex-row gap-5 w-full max-w-7xl mx-auto my-10">
+    <app-card
+      [title]="'Documentation'"
+      [description]="'Comprehensive guides and documentation for Oreon Linux. Our documentation covers installation, configuration, package management, and troubleshooting.'"
+      [button]="'View docs'"
+      class="flex-1"
+    />
+    <app-card
+      [title]="'Oreon Forums'"
+      [description]="'Ask questions, share solutions, and connect with the Oreon community. Our new forums are the best place to get support and discuss Oreon Linux.'"
+      [button]="'View docs'"
+      class="flex-1"
+    />
+    <app-card
+      [title]="'Discord Server'"
+      [description]="'Join our Discord for real-time chat and community discussions. While the forums are preferred for support, our Discord is great for live interaction.'"
+      [button]="'View docs'"
+      class="flex-1"
+    />
+  </div>
+
+  <h2 class="text-2xl md:text-3xl font-bold mx-auto my-10 text-center">FAQ</h2>
+  <div class="flex flex-col gap-5 w-full max-w-5xl mx-auto mb-10">
+    <app-card
+      [title]="'What are the system requirements for Oreon Linux?'"
+      [description]="'Oreon Linux requires a 64-bit processor, 2GB RAM (4GB recommended), 20GB disk space, and a graphics card compatible with GNOME.'"
+      [buttonEnabled]="false"
+    />
+    <app-card
+      [title]="'How long is each Oreon version supported?'"
+      [description]="'Oreon follows the support timeline of its base RHEL version, with security updates provided throughout the entire support period. See each version\'s support timeline for specific dates.'"
+      [buttonEnabled]="false"
+    />
+    <app-card
+      [title]="'Can I upgrade from one Oreon version to another?'"
+      [description]="'We are working on this, but it is not yet available.'"
+      [buttonEnabled]="false"
+    />
+    <app-card
+      [title]="'Is Oreon Linux free to use?'"
+      [description]="'Yes, Oreon Linux is free to use for both personal and commercial purposes, in accordance with the licenses of included software.'"
+      [buttonEnabled]="false"
+    />
+    <app-card
+      [title]="'How can I contribute to the Oreon Project?'"
+      [description]="'You can contribute by testing, reporting bugs, helping with documentation, or developing. Join our Discord community to learn more about contribution opportunities.'"
+      [buttonEnabled]="false"
+    />
+  </div>
+</main>

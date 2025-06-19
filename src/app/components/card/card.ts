@@ -11,6 +11,7 @@ export class Card {
   @Input() title: string = '';
   @Input() description: string = '';
   @Input() button: string = '';
+  @Input() buttonEnabled: boolean = true;
   @Input() internRoute: boolean = false;
   @Input() destination: string = '#';
 }
