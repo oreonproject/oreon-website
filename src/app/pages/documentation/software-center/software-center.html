@@ -1,1 +1,103 @@
-<p>software-center works!</p>
+<div class="flex flex-col gap-12 px-6 lg:px-32 py-16 bg-gray-100 min-h-screen">
+  <div>
+    <h1 class="text-center font-extrabold text-3xl">Software center</h1>
+    <p class="mt-4 text-lg text-gray-600 text-center">
+      Oreon provides a graphical Software Center, making it easy to discover,
+      install, and manage applications without needing to use the command line.
+    </p>
+  </div>
+
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Overview
+      </h2>
+    </div>
+    <p>
+      The Oreon Software Center provides a user-friendly graphical interface for
+      managing software on your system. It serves as a storefront, allowing you
+      to browse, search, install, update, and remove applications easily. Under
+      the hood, it typically utilizes the system's package manager (dnf) and may
+      also integrate with other packaging formats like Flatpak, offering access
+      to a wide range of software from various sources.
+    </p>
+  </main>
+
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        browsing and searching
+      </h2>
+    </div>
+    <p>
+      The main view of the Software Center usually presents featured
+      applications and categories (such as Audio & Video, Graphics &
+      Photography, Office, Developer Tools, Games, etc.). You can click on these
+      categories to explore related software. A prominent search bar at the top
+      allows you to quickly find applications by typing their name or keywords
+      related to their function. Search results update dynamically as you type.
+    </p>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Installing applications
+      </h2>
+    </div>
+    <p>
+      When you select an application from the browse view or search results, you
+      are taken to its details page. This page typically shows the application's
+      name, icon, description, screenshots, version number, license, and
+      sometimes user reviews or ratings. To install the application, simply
+      click the prominent "Install" button. You will likely be prompted to enter
+      your user password to authorize the system change. The Software Center
+      will then download and install the application and any necessary
+      dependencies, showing a progress indicator.
+    </p>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Updating software
+      </h2>
+    </div>
+    <p>
+      Keeping your system and applications up-to-date is crucial. The Software
+      Center typically includes an "Updates" section or tab. It automatically
+      checks for available updates periodically and will display a list of
+      packages (including applications and system components) that have newer
+      versions available. You can review the updates and click an "Update All"
+      or similar button to apply them. Individual updates might also be
+      selectable. Password authentication is usually required for applying
+      updates.
+    </p>
+  </main>
+
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Software sources / repositories
+      </h2>
+    </div>
+    <p>
+      The applications available in the Software Center come from configured
+      software repositories. These are servers containing packages specifically
+      built and tested for Oreon and its base distribution. Additionally,
+      Oreon's Software Center might be configured to use Flatpak, a universal
+      packaging system. This often includes integration with Flathub, a large
+      repository of Flatpak applications, significantly expanding the available
+      software selection. Flatpak applications run in a sandboxed environment,
+      which can enhance security.
+    </p>
+  </main>
+</div>

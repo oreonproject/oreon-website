@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-installation-guide',
   imports: [],
   templateUrl: './installation-guide.html',
-  styles: ``
+  styles: ``,
 })
-export class InstallationGuide {
-
-}
+export class InstallationGuide {}

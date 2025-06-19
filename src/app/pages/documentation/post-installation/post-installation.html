@@ -1,1 +1,128 @@
-<p>post-installation works!</p>
+<div class="flex flex-col gap-12 px-6 lg:px-32 py-16 bg-gray-100 min-h-screen">
+  <div>
+    <h1 class="text-center font-extrabold text-3xl">Post-Installation Setup</h1>
+    <p class="mt-4 text-lg text-gray-600 text-center">
+      Upon booting into Oreon Linux for the first time, log in with the user
+      account you created during installation. You might be greeted by the GNOME
+      Initial Setup utility (or a similar welcome screen for other potential
+      desktop environments). Follow the prompts to configure language, keyboard
+      settings (if needed), privacy options, and connect online accounts
+      (optional). This setup usually runs only once.
+    </p>
+  </div>
+
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Check for system updates
+      </h2>
+      <p class="text-gray-600">
+        It's crucial to update your system immediately after installation to get
+        the latest security patches, bug fixes, and software improvements.
+      </p>
+    </div>
+
+    <ol class="list-decimal mt-5 ml-5">
+      <li>
+        Open a Terminal window (You can usually find it by searching for
+        "Terminal" in the Activities overview or application menu).
+      </li>
+      <li>
+        Run the following command to check for and apply updates. You will be
+        prompted for your user password (the one you use to log in).
+
+        <div
+          class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+        >
+          <code
+            class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+            >sudo dnf update</code
+          >
+        </div>
+        <p>
+          Review the list of packages to be updated. Type `y` and press Enter to
+          confirm and proceed with the download and installation. This process
+          might take some time depending on the number of updates and your
+          internet speed. It's a good practice to reboot your system after
+          applying major updates, especially if the kernel or system libraries
+          were updated:
+        </p>
+      </li>
+    </ol>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Verify hardware drivers
+      </h2>
+      <p class="text-gray-600">
+        Oreon Linux aims to provide excellent hardware support out-of-the-box.
+        However, it's good to check if all your hardware components (graphics
+        card, Wi-Fi adapter, etc.) are working correctly.
+      </p>
+    </div>
+
+    <p>
+      <b>Graphics:</b> Check your display resolution and ensure graphical
+      effects are smooth. For NVIDIA or AMD GPUs, Oreon may offer proprietary
+      drivers via its own repositories or integrated third-party sources like
+      RPM Fusion. Check the Software Center or system settings for "Additional
+      Drivers". <br /><b>Wi-Fi & Bluetooth:</b> Ensure you can connect to
+      wireless networks and pair Bluetooth devices if needed. <br /><b
+        >Other Peripherals:</b
+      >
+      Test printers, scanners, webcams, and other connected devices.
+    </p>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Enable additional repositories (if applicable)
+      </h2>
+      <p class="text-gray-600">
+        While Oreon Linux provides a solid base, some software (like multimedia
+        codecs or proprietary drivers) might reside in third-party repositories.
+        Oreon might pre-configure access to popular repositories like RPM
+        Fusion, or provide an easy way to enable them.
+      </p>
+    </div>
+
+    <p>
+      Check the Oreon documentation specific to your version or look for options
+      within the Software Center or system settings to enable third-party
+      repositories if they aren't enabled by default. The RPM Fusion repository
+      is a common source for packages not included in standard RHEL/Fedora-based
+      distributions due to licensing or patent reasons. If Oreon doesn't include
+      it, you might enable it manually (check the RPM Fusion website for
+      instructions specific to your RHEL base version, e.g., RHEL 9 for Oreon
+      Lime). After enabling new repositories, run `sudo dnf update` again to
+      refresh the package lists.
+    </p>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Explore and Customize
+      </h2>
+      <p class="text-gray-600">
+        Your Oreon Linux system is now ready! Take some time to:
+      </p>
+    </div>
+
+    <p>
+      Explore the Default Applications. <br />
+      Discover new software in the Software Center. <br />Customize the look and
+      feel using the Desktop Customization guide. <br />Learn more about
+      managing your system in the Package Management and System Updates
+      sections.
+    </p>
+  </main>
+</div>

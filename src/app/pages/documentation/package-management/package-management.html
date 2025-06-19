@@ -1,1 +1,209 @@
-<p>package-management works!</p>
+<div class="flex flex-col gap-12 px-6 lg:px-32 py-16 bg-gray-100 min-h-screen">
+  <div>
+    <h1 class="text-center font-extrabold text-3xl">
+      Package management (dnf)
+    </h1>
+    <p class="mt-4 text-lg text-gray-600 text-center">
+      Oreon uses <code>dnf</code> (Dandified YUM) as its primary package
+      manager. It allows you to install, update, and remove software packages.
+    </p>
+  </div>
+
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Searching for packages
+      </h2>
+    </div>
+    <p>
+      To search the available repositories for a package based on its name or
+      description:
+    </p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf search &lt;search-term&gt;</code
+      >
+    </div>
+    <p>
+      For example, to search for packages related to the 'nano' text editor:
+    </p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf search nano</code
+      >
+    </div>
+  </main>
+
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Installing packages
+      </h2>
+    </div>
+    <p>To install a package and its required dependencies:</p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf install &lt;package-name&gt;</code
+      >
+    </div>
+    <p>You can install multiple packages at once</p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf install &lt;package1&gt; &lt;package2&gt;</code
+      >
+    </div>
+    <p>For example, to install the 'htop' process viewer:</p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf install htop</code
+      >
+    </div>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Removing packages
+      </h2>
+    </div>
+    <p>To remove (uninstall) a package and packages that depend on it:</p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf remove &lt;package-name&gt;</code
+      >
+    </div>
+    <p>For example, to remove 'htop':</p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf remove htop</code
+      >
+    </div>
+    <p>
+      To remove packages that were installed as dependencies but are no longer
+      required:
+    </p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf autoremove</code
+      >
+    </div>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Viewing package information
+      </h2>
+    </div>
+    <p>
+      To display detailed information about a package (installed or available):
+    </p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf info &lt;package-name&gt;</code
+      >
+    </div>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Repositories
+      </h2>
+    </div>
+    <p>
+      dnf downloads packages from configured repositories. To list enabled
+      repositories:
+    </p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf repolist</code
+      >
+    </div>
+    <p>
+      Repository configuration files are typically located in
+      <code>/etc/yum.repos.d/</code>. Oreon Linux includes its own set of
+      repositories providing the core OS and updates, as well as compatibility
+      with standard Enterprise Linux repositories.
+    </p>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Finding which package provides a file
+      </h2>
+    </div>
+    <p>
+      If you know the name of a file (like a command) but not the package it
+      belongs to:
+    </p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf provides &lt;file-path-or-pattern&gt;</code
+      >
+    </div>
+    <p>For example:</p>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf provides /usr/bin/htop</code
+      >
+    </div>
+    <div
+      class="relative flex items-center p-3 bg-gray-100 rounded-md mt-4 mb-2"
+    >
+      <code
+        class="flex-grow text-gray-700 text-base font-mono pr-10 select-all break-all"
+        >sudo dnf provides '*bin/nano'</code
+      >
+    </div>
+    <p>
+      This covers the basic usage of the DNF package manager on Oreon Linux. For
+      more advanced options and features, refer to the DNF man page (man dnf).
+    </p>
+  </main>
+</div>

@@ -1,1 +1,175 @@
-<p>installation-guide works!</p>
+<div class="flex flex-col gap-12 px-6 lg:px-32 py-16 bg-gray-100 min-h-screen">
+  <div>
+    <h1 class="text-center font-extrabold text-3xl">Installation guide</h1>
+    <p class="mt-4 text-lg text-gray-600 text-center">
+      This guide provides step-by-step instructions for installing Oreon Linux
+      on your computer. We recommend reading through the entire guide before
+      starting the installation process.
+    </p>
+  </div>
+
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Before You Begin
+      </h2>
+    </div>
+
+    <p class="leading-6">
+      <b>Download the ISO:</b> Obtain the latest Oreon Linux ISO image from the
+      Downloads page. <br />
+      <br />
+      <b>Verify the ISO (Recommended):</b> Ensure the downloaded ISO file is not
+      corrupted by verifying its checksum (SHA256 or similar). Checksum details
+      are usually provided alongside the download link. <br />
+      <br /><b>Create Bootable Media:</b> Write the ISO image to a USB drive
+      (recommended, 4GB minimum) or DVD. Tools like Rufus (Windows),
+      balenaEtcher (Cross-platform), or the `dd` command (Linux/macOS) can be
+      used. <br />
+      <br />
+      <b>System Requirements:</b> Ensure your computer meets the minimum system
+      requirements (check the specific release notes for details, but generally:
+      64-bit processor, 4GB RAM, 25GB disk space). <br />
+      <br />
+      <b>Backup Data:</b> Back up any important data from the target computer
+      before proceeding. The installation process may erase the hard drive.
+      <br />
+      <br />
+      <b>Configure BIOS/UEFI:</b> Access your system's BIOS/UEFI settings
+      (usually by pressing F2, F12, DEL, or ESC during boot) and configure it to
+      boot from the USB drive or DVD you created. Oreon Linux supports Secure
+      Boot, so disabling it is typically not required. Ensure UEFI mode is
+      enabled.
+    </p>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Booting the installer
+      </h2>
+      <ol class="list-decimal mt-5 ml-5">
+        <li>Insert the bootable USB drive or DVD into your computer.</li>
+        <li>Restart the computer.</li>
+        <li>
+          If configured correctly, the Oreon Linux installer boot menu should
+          appear. Select the option to "Test and run Oreon Linux" (or similar)
+          and press Enter.
+        </li>
+        <li>
+          The installer environment will load. This may take a few moments.
+        </li>
+      </ol>
+    </div>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        The Anaconda Installer
+      </h2>
+      <p>
+        Oreon Linux uses the Anaconda installer, common in RHEL-based
+        distributions. The main screen presents a summary of installation
+        options.
+      </p>
+      <p>
+        You need to complete items marked with a warning icon before proceeding.
+        Click on each section to configure it:
+      </p>
+
+      <ol class="list-decimal mt-5 ml-5">
+        <li>
+          <h3 class="font-bold">Language selection</h3>
+          <p>
+            Choose your preferred language for the installation process and the
+            final installed system. Click "Continue".
+          </p>
+        </li>
+        <li>
+          <h3 class="font-bold">Keyboard layout</h3>
+          <p>
+            Verify or change the keyboard layout to match your hardware. You can
+            test the layout in the provided text box. Click "Done".
+          </p>
+        </li>
+        <li>
+          <h3 class="font-bold">Time & Date</h3>
+          <p>
+            Select your geographical region and city to set the correct
+            timezone. Ensure "Network Time" is enabled if you have an internet
+            connection for automatic time synchronization. Click "Done".
+          </p>
+        </li>
+        <li>
+          <h3 class="font-bold">Installation Destination</h3>
+          <p>
+            This is the most critical step where you configure disk
+            partitioning. Select the target hard drive(s) where you want to
+            install Oreon Linux. Under "Storage Configuration", choose either:
+            <br /><b>Automatic:</b> Recommended for most users. The installer
+            will attempt to automatically partition the selected disk(s). You
+            can choose to reclaim space if necessary. <br /><b>Custom:</b> For
+            advanced users who want to define partitions manually (e.g.,
+            separate /home, LVM, specific filesystems). If you choose Automatic
+            partitioning, you can review the proposed layout. Ensure it doesn't
+            conflict with other operating systems if you are dual-booting. Click
+            "Done". If you made changes that require formatting, Anaconda will
+            ask for confirmation.
+          </p>
+        </li>
+      </ol>
+    </div>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Begin Installation & User Creation
+      </h2>
+
+      <ol class="list-decimal mt-5 ml-5">
+        <li>
+          Once all items on the installer are configured (no warnings), you can
+          begin the installation.
+        </li>
+        <li>
+          The installation will continue copying files and configuring the
+          system. This can take some time depending on your hardware and
+          software selection.
+        </li>
+      </ol>
+    </div>
+  </main>
+  <main
+    class="flex flex-col p-10 bg-white shadow-md rounded-lg border border-gray-200"
+  >
+    <div class="w-full text-center lg:text-left mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        Finishing Up
+      </h2>
+
+      <ol class="list-decimal mt-5 ml-5">
+        <li>When the installation is complete, click the finish button.</li>
+        <li>
+          Reboot your computer and remove the installation media (USB drive or
+          DVD) after the reboot is complete.
+        </li>
+        <li>
+          Your computer will restart and boot into your new Oreon Linux system.
+        </li>
+        <li>Log in using the user account you created during installation.</li>
+        <li>
+          Congratulations! You have successfully installed Oreon Linux. Proceed
+          to the Post-Installation Setup guide for initial configuration and
+          updates.
+        </li>
+      </ol>
+    </div>
+  </main>
+</div>

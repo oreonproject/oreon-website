@@ -15,6 +15,7 @@ import { CommandLine } from './pages/documentation/command-line/command-line';
 import { Virtualization } from './pages/documentation/virtualization/virtualization';
 import { ServerSetup } from './pages/documentation/server-setup/server-setup';
 import { Development } from './pages/documentation/development/development';
+import { NotFound } from './pages/not-found/not-found';
 
 export const routes: Routes = [
   { path: '', component: Home }, // home page
@@ -38,5 +39,5 @@ export const routes: Routes = [
   { path: 'docs/server-setup', component: ServerSetup },
   { path: 'docs/development', component: Development },
 
-  { path: '**', redirectTo: '' }, // error page (needs to be implemented still, goes to homepage for now)
+  { path: '**', component: NotFound }, // error page (needs to be implemented still, goes to homepage for now)
 ];

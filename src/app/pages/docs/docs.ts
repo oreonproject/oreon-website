@@ -5,6 +5,5 @@ import { Card } from '../../components/card/card';
   selector: 'app-docs',
   imports: [Card],
   templateUrl: './docs.html',
-  styles: ``,
 })
 export class Docs {}
